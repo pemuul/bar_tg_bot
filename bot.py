@@ -201,7 +201,7 @@ def start_roulette(message, roulette_elements=get_gift_list()):
 def handle_button_click(call):
     data = call.data.split('|')
     if data[0] == '1':
-        bot.send_message(ADMIN_ID, f"@{data[1]} выиграл '{data[2]}'")
+        bot.send_message(int(ADMIN_ID), f"@{data[1]} выиграл '{data[2]}'")
         bot.send_message(call.message.chat.id, "Подойдите к бармену!")
         bot.delete_message(call.message.chat.id, call.message.message_id)    
         #add_delete_message(call.message, 1) 
